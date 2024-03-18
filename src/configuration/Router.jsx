@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from "../components/views/HomeView";
 import FormView from "../components/views/FormView";
+import ArticlesView from "../components/views/ArticlesView";
 
 const Router = () => {
   return (
@@ -9,6 +10,7 @@ const Router = () => {
       <Routes>
         <Route path='/' element={<HomeView/>}></Route>
         <Route path='/form' element={<FormView/>}></Route>
+        <Route path='/articles' element={<ArticlesView/>}></Route>
       </Routes>
     </BrowserRouter>
   );
