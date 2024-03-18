@@ -59,7 +59,7 @@ const Navbar = () => {
                                     <ul className="py-2 text-sm text-indigo dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                                         {categories.map(category => (
                                             <li key={category.id}>
-                                                <a href="#" className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-gray-600 dark:hover:text-beige-bg">{category}</a>
+                                                <a href="#" className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-gray-600 dark:hover:text-beige-bg">{category.category}</a>
                                             </li>
                                         ))}
                                     </ul>
