@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useFetch from '../../configuration/service/useFetch';
+import { Link } from 'react-router-dom';
 import { API_URL } from '../../configuration/config';
 import { FaUmbrella } from "react-icons/fa";
 
@@ -21,9 +22,9 @@ const Navbar = () => {
     return (
         <nav className="bg-indigo border-gray-200 dark:bg-gray-900 dark:border-gray-700 fixed top-0 left-0 w-full z-50">
             <div className="w-full flex flex-wrap items-center justify-between mx-auto p-1">
-                <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="src\assets\images\LogoBgAzul.svg" className="md:h-16 lg:h-16 sm:h-8" alt="Mon Petit Parapluie Logo" />
-                </a>
+                </Link>
                 <button
                     data-collapse-toggle="navbar-dropdown"
                     type="button"
@@ -72,7 +73,9 @@ const Navbar = () => {
                             <a href="#" className="block py-2 px-3 text-beige-bg rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-beige-bg md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Mi Paraguas</a>
                         </li>
                         <li className="flex items-center">
-                            <FaUmbrella className="w-6 h-6 text-beige-bg dark:text-white" aria-hidden="true" />
+                        <Link to="/form">
+                             <FaUmbrella className="w-6 h-6 text-beige-bg dark:text-white" aria-hidden="true" /> 
+                         </Link>
                             <svg className="w-6 h-6 text-beige-bg dark:text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
                             </svg>
