@@ -11,6 +11,7 @@ export default {
         'beige-bg': '#FAF0CA',
         'indigo': '#0541B2',
         'pomme': '#308006',
+        'petit-blue': '#3F6DC4',
       }
     },
   },
