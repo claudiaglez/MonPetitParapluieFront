@@ -28,7 +28,7 @@ const ArticlesView = () => {
     return (
         <>
             <Navbar />
-            <div className="grid grid-cols-3 gap-4 p-4">
+            <div className="bg-beige-bg mt-16 grid grid-cols-3 gap-4 p-4">
                 {/* Mapea los artículos y renderiza un componente Card para cada uno */}
                 {articles.map(article => (
                     <Card key={article.id} article={article} />
