@@ -28,7 +28,7 @@ const Navbar = () => {
         >
           <img
             src="src\assets\images\LogoBgAzul.svg"
-            className="md:h-16 lg:h-16 sm:h-8"
+            className="md:h-8 lg:h-16 sm:h-8"
             alt="Mon Petit Parapluie Logo"
           />
         </Link>

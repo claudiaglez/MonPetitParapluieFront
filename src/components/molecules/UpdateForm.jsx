@@ -51,7 +51,7 @@ const navigate = useNavigate();
     e.preventDefault();
     try {
       const response = await fetch(`http://127.0.0.1:8000/api/articles/${article.id}`, {
-        method: 'PUT', // Cambié el método a PUT para actualizar el artículo
+        method: 'PUT', 
         headers: {
           'Content-Type': 'application/json'
         },
@@ -93,21 +93,21 @@ const navigate = useNavigate();
       };
 
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-indigo dark:bg-gray-900">
       <div className="max-w-2xl px-4 py-8 mx-auto lg:py-16">
-        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Actualizar producto</h2>
+        <h2 className="mb-4 text-xl font-bold text-beige-bg dark:text-white">Actualizar producto</h2>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
             <div className="sm:col-span-2">
-              <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Título</label>
+              <label htmlFor="title" className="block mb-2 text-sm font-medium text-beige-bg dark:text-white">Título</label>
               <input type="text" name="title" id="title" value={formData.title} onChange={handleInputChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
             </div>
             <div>
-              <label htmlFor="image_url" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">URL de la imagen</label>
+              <label htmlFor="image_url" className="block mb-2 text-sm font-medium text-beige-bg dark:text-white">URL de la imagen</label>
               <input type="text" name="image_url" id="image_url" value={formData.image_url} onChange={handleInputChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
             </div>
             <div>
-              <label htmlFor="categories_id" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoría</label>
+              <label htmlFor="categories_id" className="block mb-2 text-sm font-medium text-beige-bg dark:text-white">Categoría</label>
               <select id="categories_id" name="categories_id" value={formData.categories_id} onChange={handleInputChange} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                 <option value="">Elegir categoría</option>
                 {categories.map((category) => (
@@ -116,7 +116,7 @@ const navigate = useNavigate();
               </select>
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descripción</label>
+              <label htmlFor="description" className="block mb-2 text-sm font-medium text-beige-bg dark:text-white">Descripción</label>
               <textarea name="description" id="description" value={formData.description} onChange={handleInputChange} rows="8" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required />
             </div>
           </div>
