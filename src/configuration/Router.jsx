@@ -35,7 +35,7 @@ const App = () => {
         {/* Pasamos los artículos como prop a ArticlesView y ArticleDetailsView */}
         <Route path='/articles' element={<ArticlesView articles={articles} />}></Route>
         <Route path='/article/:id' element={<ArticleDetailsView articles={articles} />}></Route>
-        <Route path='/categories/:categoryId' element={<CategoryView />} />
+        <Route path='/categories/:category' element={<CategoryView />} />
         <Route path='/update/article/:id' element={<UpdateArticleView />} />
       </Routes>
     </BrowserRouter>

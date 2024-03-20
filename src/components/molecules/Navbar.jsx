@@ -16,12 +16,14 @@ const Navbar = () => {
   }, [categoriesData]);
 
   const toggleDropdown = () => {
+    console.log("Toggling dropdown");
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
     <nav className="bg-indigo border-gray-200 dark:bg-gray-900 dark:border-gray-700 fixed top-0 left-0 w-full z-50">
       <div className="w-full flex flex-wrap items-center justify-between mx-auto p-1">
+   
         <Link
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -33,15 +35,13 @@ const Navbar = () => {
           />
         </Link>
         <button
-          data-collapse-toggle="navbar-dropdown"
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-dropdown"
-          aria-expanded="false"
+          onClick={toggleDropdown}
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-beige-bg rounded-lg md:hidden hover:bg-indigo focus:outline-none focus:ring-2 focus:ring-indigo dark:text-gray-400 dark:hover:bg-indigo dark:focus:ring-indigo ${isDropdownOpen ? 'bg-indigo' : ''}"
         >
           <span className="sr-only">Open main menu</span>
           <svg
-            className="w-5 h-5"
+            className="w-5 h-5 bg-indigo"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -56,6 +56,61 @@ const Navbar = () => {
             />
           </svg>
         </button>
+        {isDropdownOpen && (
+          <div className="md:hidden bg-beige-bg absolute top-0 right-0 w-1/2">
+            <ul className="py-2 text-sm text-indigo dark:text-gray-400">
+            <li>
+                <Link
+                  to="/articles"
+                  className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-gray-600 dark:hover:text-beige-bg"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+        El Proyecto
+      </Link>
+    </li>
+              <li>
+                <Link
+                  to="/articles"
+                  className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-gray-600 dark:hover:text-beige-bg"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+        Bordados
+      </Link>
+    </li>
+ 
+    {categories.map((category) => (
+      <li key={category.id}>
+        <Link
+          to={`/categories/${category.category}`}
+          className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-gray-600 dark:hover:text-beige-bg"
+          onClick={() => setIsDropdownOpen(false)}        
+        >
+          {category.category}
+        </Link>
+      </li>
+    
+    ))}
+      <li>
+                <Link
+                  to="/articles"
+                  className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-gray-600 dark:hover:text-beige-bg"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+        ¿Qué te bordo?
+      </Link>
+    </li>
+    <li>
+                <Link
+                  to="/articles"
+                  className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-indigo dark:hover:text-beige-bg"
+                  onClick={() => setIsDropdownOpen(false)}
+                >
+       Mi Paraguas
+      </Link>
+    </li>
+  </ul>
+          </div>
+        )}
         <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-indigo dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
@@ -114,7 +169,7 @@ const Navbar = () => {
                     {categories.map((category) => (
                       <li key={category.id}>
                         <Link
-                          to={`/categories/${category.id}`}
+                          to={`/categories/${category.category}`}
                           className="block px-4 py-2 hover:bg-indigo hover:text-beige-bg dark:hover:bg-gray-600 dark:hover:text-beige-bg"
                         >
                           {category.category}

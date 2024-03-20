@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import Card from "../molecules/Card";
 
 const CategoryView = () => {
-  const { categoryId } = useParams();
+  const { category } = useParams();
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/categories/${categoryId}/articles`)
+    console.log("Categoría:", category); 
+    fetch(`http://127.0.0.1:8000/api/categories/${category}/articles`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("No se pudo obtener la respuesta de la API");
@@ -16,6 +17,7 @@ const CategoryView = () => {
         return response.json();
       })
       .then((data) => {
+        console.log("Artículos:", data);
         setArticles(data);
         setLoading(false);
       })
@@ -23,7 +25,7 @@ const CategoryView = () => {
         console.error("Error al obtener los artículos de la categoría:", error);
         setLoading(false);
       });
-  }, [categoryId]);
+  }, [category]);
 
   if (loading) {
     return <div>Cargando...</div>;
@@ -46,3 +48,4 @@ const CategoryView = () => {
 };
 
 export default CategoryView;
+
