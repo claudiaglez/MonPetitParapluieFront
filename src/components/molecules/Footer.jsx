@@ -17,7 +17,7 @@ const Footer = () => {
                     </svg>
                   <span class="sr-only">Facebook page</span>
               </a>
-              <a href="#" class="text-beige-bg hover:text-gray-900 dark:hover:text-white ms-5">
+              <a href="https://www.instagram.com/monpetitparapluie/" class="text-beige-bg hover:text-gray-900 dark:hover:text-white ms-5">
               <FaInstagram />
                   <span class="sr-only">Instagram Page</span>
               </a>
