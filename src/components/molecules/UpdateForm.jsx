@@ -60,7 +60,8 @@ const navigate = useNavigate();
       if (!response.ok) {
         throw new Error('Error al actualizar el producto');
       }
-      alert('Producto actualizado correctamente');
+      alert('Et voilà! Producto actualizado correctamente');
+      navigate('/articles');
     } catch (error) {
       console.error(error);
       alert('Error al actualizar el producto');
