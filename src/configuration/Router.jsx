@@ -8,6 +8,7 @@ import CategoryView from "../components/views/CategoryView";
 import UpdateArticleView from "../components/views/UpdateArticleView";
 import ProyectoView from "../components/views/ProyectoView";
 import QueTeBordoView from "../components/views/QueTeBordoView";
+import MiParaguasView from "../components/views/MiParaguasView";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -35,6 +36,7 @@ const App = () => {
         <Route path='/' element={<HomeView/>}></Route>
         <Route path='/proyecto' element={<ProyectoView/>}></Route>
         <Route path='/quetebordo' element={<QueTeBordoView/>}></Route>
+        <Route path='/miparaguas' element={<MiParaguasView/>}></Route>
         <Route path='/form' element={<FormView/>}></Route>
         {/* Pasamos los artículos como prop a ArticlesView y ArticleDetailsView */}
         <Route path='/articles' element={<ArticlesView articles={articles} />}></Route>

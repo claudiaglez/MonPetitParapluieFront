@@ -29,7 +29,6 @@ const navigate = useNavigate();
   // Función para actualizar los estados locales cuando cambia el artículo
   useEffect(() => {
     if (article) {
-        console.log("Datos del artículo:", article); 
       setFormData({
         title: article.title || '',
         image_url: article.image_url || '',
@@ -42,7 +41,6 @@ const navigate = useNavigate();
   // Función para manejar cambios en los campos del formulario
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log("Cambio en el campo:", name, value); 
     setFormData({ ...formData, [name]: value });
   };
 
