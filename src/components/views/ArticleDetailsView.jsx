@@ -25,9 +25,9 @@ const ArticleDetailsView = ({ articles }) => {
   return (
     <>
       <Navbar />
-      <div className="bg-beige-bg flex flex-col md:flex-row justify-center items-center h-screen px-20 py-8">
+      <div className="bg-beige-bg flex flex-col md:flex-row justify-center items-center h-screen p-4">
         <img
-          className="h-auto max-w-xl max-h-96 mx-auto rounded-lg shadow-xl dark:shadow-gray-800"
+          className="h-auto max-w-xl max-h-72 rounded-lg shadow-xl dark:shadow-gray-800"
           src={articleDetail.image_url}
           alt={articleDetail.title}
         />
