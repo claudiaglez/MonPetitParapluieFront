@@ -6,7 +6,14 @@ export default {
     'node_modules/flowbite-react/lib/esm/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'beige-bg': '#FAF0CA',
+        'indigo': '#0541B2',
+        'pomme': '#308006',
+        'petit-blue': '#3F6DC4',
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin'),
